@@ -37,6 +37,9 @@ def _default_uri():  # pragma: no cover
         "/usr/lib64/libvirt/libvirt_lxc"
     ):
         return "lxc:///"
+
+    if os.path.exists("/usr/sbin/bhyve"):
+        return "bhyve:///system"
     return None
 
 
