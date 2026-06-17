@@ -150,6 +150,8 @@ class vmmCreateConn(vmmGObjectUI):
             uiutil.set_list_selection(self.widget("hypervisor"), HV_QEMU)
         elif default.startswith("xen"):  # pragma: no cover
             uiutil.set_list_selection(self.widget("hypervisor"), HV_XEN)
+        elif default.startswith("bhyve"):
+            uiutil.set_list_selection(self.widget("hypervisor"), HV_BHYVE)
 
     def hostname_changed(self, src_ignore):
         self.populate_uri()
